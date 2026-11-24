@@ -1,0 +1,1 @@
+{"name":"guftagu-video-chat","private":true,"type":"module","scripts":{"dev":"node build.mjs && node local.mjs","start":"node build.mjs && node local.mjs","build":"node build.mjs"}}

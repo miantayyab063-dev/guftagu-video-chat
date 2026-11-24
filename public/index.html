@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1530">
+  <title>Guftagu · Video Lounge</title>
+  <link rel="icon" href="/mark.webp" type="image/webp">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><img src="/mark.webp" alt="" width="46" height="46"><span>Guftagu<span class="brand-dot">.</span></span></div>
+    <button id="guide" class="rules-button">House rules</button>
+  </header>
+  <main>
+    <div class="lead">
+      <div>
+        <h1>Video lounge<span class="brand-dot">.</span></h1>
+        <p>Meet someone new in a one-to-one video call.</p>
+      </div>
+      <div class="age" aria-label="Adults aged 18 and over">18+</div>
+    </div>
+    <section class="stage" aria-label="Video feeds">
+      <article class="panel remote">
+        <video id="remote" autoplay playsinline aria-label="Partner video"></video>
+        <span class="panel-label">Partner</span>
+        <div class="empty" id="empty">
+          <div class="scene" aria-hidden="true">
+            <span class="orbit orbit-wide"></span><span class="orbit orbit-small"></span>
+            <span class="pedestal"></span><span class="spark spark-left"></span><span class="spark spark-right"></span>
+            <img class="scene-mark" src="/mark.webp" width="235" height="235" alt="">
+          </div>
+          <h2 id="title">Ready to meet?</h2>
+          <p id="status" role="status">Start a chat when you’re ready.</p>
+        </div>
+      </article>
+      <article class="panel self">
+        <video id="local" muted autoplay playsinline aria-label="Your video"></video>
+        <span class="panel-label">You</span>
+        <div id="selfEmpty" class="self-empty">
+          <div class="camera-symbol" aria-hidden="true"><i></i></div>
+          <p>Camera preview</p>
+        </div>
+        <div class="devices">
+          <button id="mic" disabled>Mic on</button>
+          <button id="cam" disabled>Camera on</button>
+        </div>
+      </article>
+    </section>
+    <section class="controls" aria-label="Call controls">
+      <label class="consent"><input type="checkbox" id="adult"> <span>I am 18+ and agree to the house rules.</span></label>
+      <div class="actions">
+        <button id="start" class="primary">Start video chat</button>
+        <button id="end" disabled>End</button>
+        <button id="report" disabled>Report</button>
+      </div>
+    </section>
+  </main>
+  <dialog id="rules">
+    <h2>House rules</h2>
+    <p>Adults 18+ only. Keep conversations respectful. No nudity, harassment, threats or recording without consent.</p>
+    <p>Keep personal details private. You can end a call or report a partner at any time. A report stores the session reference and reason.</p>
+    <form method="dialog"><button class="primary">Got it</button></form>
+  </dialog>
+  <dialog id="reason">
+    <h2>Report this partner</h2>
+    <p>Submitting a report also ends this call.</p>
+    <select id="category" aria-label="Report reason"><option>Harassment</option><option>Nudity or sexual content</option><option>Suspected underage user</option><option>Other inappropriate behaviour</option></select>
+    <div class="actions dialog-actions"><button id="submitReport" class="primary">Submit report</button><button id="cancel">Cancel</button></div>
+  </dialog>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
